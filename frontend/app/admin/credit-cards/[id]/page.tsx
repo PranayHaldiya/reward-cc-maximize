@@ -1,11 +1,16 @@
+import { Metadata } from 'next';
 import CreditCardDetail from './CreditCardDetail';
 
-type PageProps = {
-  params: { id: string };
+export const dynamic = 'force-dynamic';
+
+export const metadata: Metadata = {
+  title: 'Credit Card Details',
 };
 
-function Page({ params }: PageProps) {
+export default function Page({
+  params,
+}: {
+  params: { id: string };
+}) {
   return <CreditCardDetail id={params.id} />;
 }
-
-export default Page; 
