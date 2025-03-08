@@ -44,7 +44,7 @@ type Props = {
   };
 }
 
-export default function CreditCardDetailPage({ params }: Props ) {
+export default function CreditCardDetailPage({ params }: Props) {
   const router = useRouter();
   const creditCardId = params.id;
   
@@ -296,3 +296,17 @@ export default function CreditCardDetailPage({ params }: Props ) {
     </div>
   );
 } 
+
+
+'use client';
+
+
+// ... existing code ...
+
+type Props = {
+  params: {
+    id: string;
+  };
+}
+
+export default function CreditCardDetailPage({ params }: Props) {
