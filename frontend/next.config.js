@@ -5,7 +5,7 @@ const nextConfig = {
     unoptimized: process.env.NODE_ENV === 'development',
   },
   eslint: {
-    dirs: [ 'utils'],
+    dirs: [ 'components'],
     ignoreDuringBuilds: false,
   },
   typescript: {
@@ -16,4 +16,4 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
