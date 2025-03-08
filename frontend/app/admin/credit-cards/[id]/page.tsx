@@ -38,11 +38,10 @@ interface CreditCard {
   rewardRules: RewardRule[];
 }
 
- interface PageProps {
+type Props = {
   params: {
     id: string;
   };
-  searchParams: { [key: string]: string | string[] | undefined };
 }
 
 export default function CreditCardDetailPage({ params }: PageProps) {
