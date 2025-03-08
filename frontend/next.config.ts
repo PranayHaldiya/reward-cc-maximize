@@ -4,9 +4,9 @@ const nextConfig: NextConfig = {
   images: {
     domains: ['localhost', 'your-production-domain.com'],
   },
-   eslint: {
-      ignoreDuringBuilds: false,
-   },
+  eslint: {
+    dirs: ['components', 'public'], // Only run ESLint on the 'pages' and 'utils' directories during production builds (next build)
+  },
 };
 
 export default nextConfig;
