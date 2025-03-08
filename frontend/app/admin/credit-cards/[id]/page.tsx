@@ -1,10 +1,11 @@
 import CreditCardDetail from './CreditCardDetail';
 
-interface Props {
+type PageProps = {
   params: { id: string };
-  searchParams: Record<string, string | string[] | undefined>;
-}
+};
 
-export default async function Page({ params, searchParams }: Props) {
+function Page({ params }: PageProps) {
   return <CreditCardDetail id={params.id} />;
 }
+
+export default Page; 
