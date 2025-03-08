@@ -38,7 +38,14 @@ interface CreditCard {
   rewardRules: RewardRule[];
 }
 
-export default function CreditCardDetailPage({ params }: { params: { id: string } }) {
+ interface PageProps {
+  params: {
+    id: string;
+  };
+  searchParams: { [key: string]: string | string[] | undefined };
+}
+
+export default function CreditCardDetailPage({ params }: PageProps) {
   const router = useRouter();
   const creditCardId = params.id;
   
