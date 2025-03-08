@@ -298,15 +298,4 @@ export default function CreditCardDetailPage({ params }: Props) {
 } 
 
 
-'use client';
 
-
-// ... existing code ...
-
-type Props = {
-  params: {
-    id: string;
-  };
-}
-
-export default function CreditCardDetailPage({ params }: Props) {
