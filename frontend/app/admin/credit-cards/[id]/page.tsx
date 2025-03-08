@@ -3,17 +3,20 @@ import CreditCardDetail from './CreditCardDetail';
 
 export const dynamic = 'force-dynamic';
 
-type PageProps = {
+export async function generateMetadata({ 
+  params,
+}: {
   params: { id: string };
-  searchParams?: { [key: string]: string | string[] | undefined };
-}
-
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+}): Promise<Metadata> {
   return {
     title: `Credit Card Details - ${params.id}`,
   };
 }
 
-export default async function Page({ params }: PageProps) {
+export default function Page({
+  params,
+}: {
+  params: { id: string };
+}) {
   return <CreditCardDetail id={params.id} />;
 } 
