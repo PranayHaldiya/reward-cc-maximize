@@ -4,7 +4,13 @@ const nextConfig = {
     domains: ['localhost', 'your-production-domain.com'],
   },
   eslint: {
-    dirs: ['pages', 'utils'], // Only run ESLint on the 'pages' and 'utils' directories during production builds (next build)
+    dirs: ['pages', 'utils'], 
+    typescript: {
+    ignoreBuildErrors: false,
+  },
+  experimental: {
+    serverActions: true,
+    // Only run ESLint on the 'pages' and 'utils' directories during production builds (next build)
   },
 };
 
