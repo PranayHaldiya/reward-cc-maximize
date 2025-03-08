@@ -43,7 +43,7 @@ interface Props {
   id: string;
 }
 
-const CreditCardDetail: React.FC<Props> = ({ id }) => {
+const CreditCardDetail = React.memo(function CreditCardDetail({ id }: Props) {
   const router = useRouter();
   const [creditCard, setCreditCard] = useState<CreditCard | null>(null);
   const [loading, setLoading] = useState(true);
@@ -292,6 +292,6 @@ const CreditCardDetail: React.FC<Props> = ({ id }) => {
       </div>
     </div>
   );
-};
+});
 
 export default CreditCardDetail; 
