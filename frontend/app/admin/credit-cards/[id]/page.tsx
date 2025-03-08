@@ -1,11 +1,12 @@
 import CreditCardDetail from './CreditCardDetail';
 
-type PageProps = {
+interface PageProps {
   params: {
     id: string;
   };
-};
+  searchParams: { [key: string]: string | string[] | undefined };
+}
 
-export default async function Page({ params }: PageProps) {
+export default function Page({ params }: PageProps) {
   return <CreditCardDetail id={params.id} />;
 }
