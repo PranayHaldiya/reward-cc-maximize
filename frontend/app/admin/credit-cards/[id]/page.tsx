@@ -1,4 +1,4 @@
-import CreditCardDetail from '@/app/admin/credit-cards/[id]/CreditCardDetail';
+import CreditCardDetail from './CreditCardDetail';
 
 type PageProps = {
   params: {
