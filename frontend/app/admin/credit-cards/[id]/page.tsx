@@ -7,10 +7,15 @@ export const metadata: Metadata = {
   title: 'Credit Card Details',
 };
 
-export default function Page({
+async function getData(id: string) {
+  return { id };
+}
+
+export default async function Page({
   params,
 }: {
   params: { id: string };
 }) {
+  await getData(params.id);
   return <CreditCardDetail id={params.id} />;
 }
