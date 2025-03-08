@@ -3,26 +3,25 @@ import CreditCardDetail from './CreditCardDetail';
 
 export const dynamic = 'force-dynamic';
 
-type PageProps = {
-  params: { id: string };
-  searchParams: { [key: string]: string | string[] | undefined };
+type PageParams = {
+  id: string;
 };
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+type PageProps = {
+  params: Promise<PageParams>;
+};
+
+export async function generateMetadata({ params }: { params: PageParams }): Promise<Metadata> {
   return {
     title: `Credit Card Details - ${params.id}`,
   };
 }
 
-async function getData(id: string) {
-  return { id };
-}
-
-export default async function Page(props: PageProps) {
-  const data = await getData(props.params.id);
+export default async function Page({ params }: PageProps) {
+  const resolvedParams = await params;
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
-      <CreditCardDetail id={data.id} />
+      <CreditCardDetail id={resolvedParams.id} />
     </div>
   );
 } 
